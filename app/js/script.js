@@ -1,8 +1,11 @@
-import data from '/app/assets/data/data.json' assert {type: 'json'};
-
 const container = document.querySelector('.categories-container');
 
-function getCategoryClass(category) {
+const getData = async () => {
+  const res =  await fetch("app/assets/data/data.json")
+  return await res.json()
+}
+
+const getCategoryClass =  category => {
   switch (category) {
     case 'Reaction':
       return 'category-reaction';
@@ -17,12 +20,13 @@ function getCategoryClass(category) {
   }
 }
 
-data.forEach(item => {
-  const {category, score, icon } = item
-  const categoryDiv = document.createElement('div');
-  const className =  getCategoryClass(category);
-  categoryDiv.classList.add(`category`, `${className}`);
-  categoryDiv.innerHTML = `
+const populate = (data) => {
+  data.forEach(item => {
+    const {category, score, icon } = item
+    const categoryDiv = document.createElement('div');
+    const className =  getCategoryClass(category);
+    categoryDiv.classList.add(`category`, `${className}`);
+    categoryDiv.innerHTML = `
       <img class="category-icon" src="${icon}" alt="${category}">
       <div class="category-name">${category}</div>
       <div class="score">
@@ -30,5 +34,13 @@ data.forEach(item => {
         <span class="max-score"> / 100</span>
       </div>
   `;
-  container.appendChild(categoryDiv);
-});
+    container.appendChild(categoryDiv);
+  });
+}
+
+getData()
+  .then(resp => populate(resp))
+  .catch(err => console.error(err))
+
+
+
