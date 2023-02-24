@@ -1,0 +1,244 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  height: 100vh;
+  font-size: 16px;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.container {
+  min-height: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+.container .wrapper {
+  display: block;
+}
+.container .wrapper .result-section {
+  padding-top: 26px;
+  padding-bottom: 38px;
+  border-radius: 0 0 32px 32px;
+  margin-bottom: 25px;
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+.container .wrapper .result-section .label {
+  display: block;
+  font-weight: 700;
+  line-height: 23px;
+  color: hsl(241, 100%, 89%);
+  margin-bottom: 23px;
+}
+.container .wrapper .result-section .score {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+  padding-top: 27px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  margin-right: auto;
+  margin-left: auto;
+  color: hsl(0, 0%, 100%);
+}
+.container .wrapper .result-section .score .score-number {
+  display: block;
+  font-size: 56px;
+  line-height: 72px;
+  font-weight: 800;
+}
+.container .wrapper .result-section .score .max-score {
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: hsl(241, 100%, 77%);
+}
+.container .wrapper .result-section .description .quality {
+  display: block;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 9px;
+}
+.container .wrapper .result-section .description .quality-details {
+  display: block;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 58px;
+  padding-right: 57px;
+  color: hsl(241, 100%, 89%);
+}
+.container .wrapper .summary .header {
+  padding-left: 35px;
+  text-align: left;
+  margin-bottom: 23px;
+  font-weight: 500;
+}
+.container .wrapper .summary .categories-container {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 25px;
+}
+.container .wrapper .summary .categories-container .category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  height: 56px;
+  border-radius: 12px;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+.container .wrapper .summary .categories-container .category:not(:last-child) {
+  margin-bottom: 16px;
+}
+.container .wrapper .summary .categories-container .category-reaction {
+  color: hsl(0, 100%, 67%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #FF5555;
+}
+.container .wrapper .summary .categories-container .category-memory {
+  color: hsl(39, 100%, 56%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #FFB21E;
+}
+.container .wrapper .summary .categories-container .category-verbal {
+  color: hsl(166, 100%, 37%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #00BB8F;
+}
+.container .wrapper .summary .categories-container .category-visual {
+  color: hsl(234, 85%, 45%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #1125D6;
+}
+.container .wrapper .summary .categories-container .category .category-icon {
+  height: 20px;
+  margin-right: 12px;
+}
+.container .wrapper .summary .categories-container .category .score {
+  margin-left: auto;
+  display: flex;
+}
+.container .wrapper .summary .categories-container .category .score .actual-score {
+  font-weight: 700;
+  color: hsl(224, 30%, 27%);
+  display: block;
+  margin-right: 7px;
+}
+.container .wrapper .summary .categories-container .category .score .max-score {
+  display: block;
+  color: hsl(224, 30%, 70%);
+}
+.container .wrapper .summary .continue {
+  width: 315px;
+  border-radius: 128px;
+  height: 56px;
+  background: hsl(224, 30%, 27%);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+  margin: 0 auto 30px;
+}
+.container .wrapper .summary .continue:hover {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+@media (min-width: 376px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .wrapper {
+    display: flex;
+    box-shadow: 0 30px 60px rgba(61, 108, 236, 0.15);
+    border-radius: 32px;
+  }
+  .container .wrapper .result-section {
+    padding-bottom: 55px;
+    border-radius: 32px;
+    width: 367px;
+    padding-top: 37px;
+    margin-bottom: 0;
+  }
+  .container .wrapper .result-section .label {
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 35px;
+  }
+  .container .wrapper .result-section .score {
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    margin-bottom: 28px;
+  }
+  .container .wrapper .result-section .score .score-number {
+    font-weight: 800;
+    font-size: 72px;
+    flex-basis: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  .container .wrapper .result-section .score .max-score {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .container .wrapper .result-section .description .quality {
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 14px;
+  }
+  .container .wrapper .result-section .description .quality-details {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+  }
+  .container .wrapper .summary {
+    width: 368px;
+    padding-top: 39px;
+  }
+  .container .wrapper .summary .header {
+    font-size: 24px;
+    line-height: 31px;
+    padding-left: 42px;
+    margin-bottom: 29px;
+  }
+  .container .wrapper .summary .categories-container {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 41px;
+  }
+  .container .wrapper .summary .categories-container .category {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .container .wrapper .summary .continue {
+    width: 288px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
